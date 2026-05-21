@@ -3,12 +3,21 @@ import pandas as pd
 import re
 import io
 from datetime import date
+from PIL import Image  # 💡 이미지를 불러오기 위한 부품 추가!
 
-# 페이지 기본 설정
-st.set_page_config(page_title="F45 Trial Onboarding", page_icon="🔴", layout="wide")
+# ==========================================
+# 0. 로고 및 페이지 기본 설정
+# ==========================================
+# 깃허브에 올린 이미지 파일 이름 (예: f45_logo.png)
+logo_img = Image.open("C:/Users/Seongmin Kim/Downloads/F45 Project/F45_Logo.jpg")
 
-st.title("🔴 F45 트라이얼 온보딩 대시보드")
-st.markdown("트라이얼 관리 파일(엑셀/CSV)을 업로드하거나, 스프레드시트 표/줄글을 복붙하세요.")
+# 1) 웹 브라우저 맨 위 '탭'에 뜨는 아이콘을 로고로 변경
+st.set_page_config(page_title="F45 Trial Onboarding", page_icon=logo_img, layout="wide")
+
+# 2) 메인 화면에 대문짝만하게 로고 띄우기 (width로 크기 조절 가능)
+st.image(logo_img, width=150) 
+st.title("F45 트라이얼 온보딩 대시보드")
+st.markdown("트라이얼 관리 파일(엑셀/CSV)을 업로드하거나, 카톡 줄글을 복붙하세요.")
 st.divider()
 
 # ==========================================
